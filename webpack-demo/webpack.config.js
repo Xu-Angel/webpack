@@ -4,6 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 module.exports = {
   mode: 'production',
+  devtool: 'inline-source-map', // 编译后的代码映射回原始源代码
   plugins: [
     new CleanWebpackPlugin(), // 清楚dist目录文件
     new HtmlWebpackPlugin({ // 管理新生产的HTML 和 配置依赖
