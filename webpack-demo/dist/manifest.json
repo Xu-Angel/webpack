@@ -1,5 +1,5 @@
 {
-  "index.js": "index.bundle.js",
-  "vendors~lodash.js": "vendors~lodash.bundle.js",
+  "common.js": "common.a0fc9602514f56164ef5.js",
+  "index.js": "index.b0b289c4c952d69a6d2f.js",
   "index.html": "index.html"
 }

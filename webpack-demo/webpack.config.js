@@ -8,7 +8,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(), // 清楚dist目录文件
     new HtmlWebpackPlugin({ // 管理新生产的HTML 和 配置依赖
-      title: 'Code Splitting'
+      title: 'Caching'
     }),
     new ManifestPlugin(), // 生成资源对应的JSON文件
   ],
@@ -21,10 +21,11 @@ module.exports = {
   entry: {
     index: './src/index.js',
   },
+  // chunkhash ，bundle 的名称是它内容（通过 hash）的映射。如果我们不做修改，然后再次运行构建，我们以为文件名会保持不变。然而，如果我们真的运行，可能会发现情况并非如此：（译注：这里的意思是，如果不做修改，文件名可能会变，也可能不会。） 输出可能会因当前的 webpack 版本而稍有差异。新版本不一定有和旧版本相同的 hash 问题，但我们以下推荐的步骤，仍然是可靠的。
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist'),
-    chunkFilename: '[name].bundle.js', // 
+    chunkFilename: '[name].[chunkhash].js', // 
   },
   module: {
     rules: [{
