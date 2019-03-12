@@ -21,7 +21,8 @@ module.exports = {
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/' // 配合webpack-dev-middleware 使用资源 以确保文件资源能够在 http://localhost:3000 下正确访问，
   },
   module: {
     rules: [
