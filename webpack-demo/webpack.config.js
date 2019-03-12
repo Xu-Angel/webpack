@@ -1,14 +1,15 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-
+const ManifestPlugin = require('webpack-manifest-plugin')
 module.exports = {
   mode: 'production',
   plugins: [
     new CleanWebpackPlugin(), // 清楚dist目录文件
     new HtmlWebpackPlugin({ // 管理新生产的HTML 和 配置依赖
       title: '管理输出'
-    })
+    }),
+    new ManifestPlugin() // 生成资源对应的JSON文件
   ],
   entry: {
     app: './src/index.js',
