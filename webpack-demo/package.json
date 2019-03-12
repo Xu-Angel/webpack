@@ -2,14 +2,17 @@
   "name": "guide",
   "version": "1.0.0",
   "description": "learn webpack",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "npm run test"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
   },
-  "author": "Xu-Angel",
+  "author": "",
   "license": "ISC",
-  "dependencies": {
+  "Devdependencies": {
+    "lodash": "^4.17.11",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
-  }
+  },
+  "dependencies": {}
 }
