@@ -5,6 +5,9 @@ const ManifestPlugin = require('webpack-manifest-plugin')
 module.exports = {
   mode: 'production',
   devtool: 'inline-source-map', // 编译后的代码映射回原始源代码
+  devServer: { // 配置告知 webpack-dev-server，在 localhost:8080 下建立服务，将 dist 目录下的文件，作为可访问文件。
+    contentBase: './dist'
+  },
   plugins: [
     new CleanWebpackPlugin(), // 清楚dist目录文件
     new HtmlWebpackPlugin({ // 管理新生产的HTML 和 配置依赖
