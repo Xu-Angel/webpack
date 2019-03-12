@@ -32,6 +32,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
+        /* 除了处理CSS外，借助于 style-loader 的帮助，CSS 的模块热替换实际上是相当简单的。当更新 CSS 依赖模块时，此 loader 在后台使用 module.hot.accept 来修补(patch) <style> 标签。 */
         use: [
           'style-loader',
           'css-loader'
