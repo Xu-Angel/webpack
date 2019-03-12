@@ -1,0 +1,15 @@
+{
+  "name": "guide",
+  "version": "1.0.0",
+  "description": "learn webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "author": "Xu-Angel",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  }
+}
