@@ -1,8 +1,14 @@
 const path = require('path');
-
+const webpack = require('webpack')
 module.exports = {
   mode: 'production',
   entry: './src/index.js',
+  plugins: [
+    new webpack.ProvidePlugin({
+      // _: 'lodash'  全局引用
+      join: ['lodash', 'join']  // 精确应用
+    })
+  ],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
