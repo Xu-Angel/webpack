@@ -22,3 +22,11 @@ function component() {
 document.body.appendChild(component());
 console.log($)
 console.log(Data);
+
+// 发生变更时可以告诉 webpack 接受更新的模块。
+if (module.hot) {
+  module.hot.accept('./print.js', function () {
+    console.log('Accepting the updated printMe module!');
+    printMe();
+  })
+}
