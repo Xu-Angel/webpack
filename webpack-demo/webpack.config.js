@@ -1,10 +1,17 @@
 const path = require('path');
+<<<<<<< HEAD
 /* 
 通过 package.json 的 "sideEffects" 属性来实现的
 "sideEffects": false
 ，如果所有代码都不包含副作用，我们就可以简单地将该属性标记为 false，来告知 webpack，它可以安全地删除未用到的 export 导出。
 「副作用」的定义是，在导入时会执行特殊行为的代码，而不是仅仅暴露一个 export 或多个 export。举例说明，例如 polyfill，它影响全局作用域，并且通常不提供 export。
 如果你的代码确实有一些副作用，那么可以改为提供一个数组：
+=======
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const ManifestPlugin = require('webpack-manifest-plugin')
+const webpack = require('webpack')
+>>>>>>> master
 
 {
   "name": "your-project",
@@ -14,12 +21,34 @@ const path = require('path');
 }
 */
 module.exports = {
+<<<<<<< HEAD
   // 我们已经可以通过 import 和 export 语法，找出那些需要删除的“未使用代码(dead code)”，然而，我们不只是要找出，还需要在 bundle 中删除它们。为此，我们将使用 -p(production) 这个 webpack 编译标记，来启用 uglifyjs 压缩插件。
   mode: 'production',// 从 webpack 4 开始，也可以通过 "mode" 配置选项轻松切换到压缩输出，只需设置为 "production"。
   entry: './src/index.js',
+=======
+  mode: 'production',
+  devtool: 'inline-source-map', // 编译后的代码映射回原始源代码
+  devServer: { // 配置告知 webpack-dev-server，在 localhost:8080 下建立服务，将 dist 目录下的文件，作为可访问文件。
+    contentBase: './dist',
+    hot: true // 是否开启热更新
+  },
+  plugins: [
+    new CleanWebpackPlugin(), // 清楚dist目录文件
+    new HtmlWebpackPlugin({ // 管理新生产的HTML 和 配置依赖
+      title: '热更新'
+    }),
+    new webpack.NamedModulesPlugin(), // 启用热更新 -- 更容易查看要修补(patch)的依赖
+    new webpack.HotModuleReplacementPlugin(), // 启用热更新
+    new ManifestPlugin() // 生成资源对应的JSON文件
+  ],
+  entry: {
+    app: './src/index.js',
+  },
+>>>>>>> master
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/' // 配合webpack-dev-middleware 使用资源 以确保文件资源能够在 http://localhost:3000 下正确访问，
   },
   module: {
     rules: [
@@ -30,6 +59,7 @@ module.exports = {
       // },
       {
         test: /\.css$/,
+        /* 除了处理CSS外，借助于 style-loader 的帮助，CSS 的模块热替换实际上是相当简单的。当更新 CSS 依赖模块时，此 loader 在后台使用 module.hot.accept 来修补(patch) <style> 标签。 */
         use: [
           'style-loader',
           'css-loader'
