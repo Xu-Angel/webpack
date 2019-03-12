@@ -1,7 +1,13 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'production',
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: '管理输出'
+    })
+  ],
   entry: {
     app: './src/index.js',
     print: './src/print.js'
