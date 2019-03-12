@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
+const webpack = require('webpack')
 
 module.exports = {
   mode: 'production',
@@ -11,15 +12,25 @@ module.exports = {
       title: 'Caching'
     }),
     new ManifestPlugin(), // 生成资源对应的JSON文件
+    /* 
+    第一个和最后一个都是符合预期的行为 -- 而 vendor 的 hash 发生变化是我们要修复的。幸运的是，可以使用两个插件来解决这个问题。第一个插件是 NamedModulesPlugin，将使用模块的路径，而不是数字标识符。虽然此插件有助于在开发过程中输出结果的可读性，然而执行时间会长一些。第二个选择是使用 HashedModuleIdsPlugin，推荐用于生产环境构建：
+    */
+   new webpack.HashedModuleIdsPlugin()
   ],
   // FIXME：webpack4 移除了 CommonsChunkPlugin，现在的写法：
   optimization: {
     splitChunks: {
-      name: 'common' // 指定公共的bundle的名称
-    }
+      name: 'vendor' // 指定公共的bundle的名称
+    },
+    // commonsChunks: {
+    //   name: 'vendor'
+    // },
   },
   entry: {
-    index: './src/index.js',
+    main: './src/index.js',
+    vendor: [
+      'lodash'
+    ]
   },
   // chunkhash ，bundle 的名称是它内容（通过 hash）的映射。如果我们不做修改，然后再次运行构建，我们以为文件名会保持不变。然而，如果我们真的运行，可能会发现情况并非如此：（译注：这里的意思是，如果不做修改，文件名可能会变，也可能不会。） 输出可能会因当前的 webpack 版本而稍有差异。新版本不一定有和旧版本相同的 hash 问题，但我们以下推荐的步骤，仍然是可靠的。
   output: {

@@ -1,8 +1,11 @@
+import Print from './print'
+
 function getComponent() {
   return import( /* webpackChunkName: "lodash" */ 'lodash').then(_ => {
     var element = document.createElement('div');
 
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    element.onclick = Print.bind(null, 'Hello webpack!');
 
     return element;
 
