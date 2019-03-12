@@ -1,8 +1,8 @@
 {
-  "name": "library-demo",
+  "name": "xquery",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/xQuery.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js"
