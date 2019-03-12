@@ -1,9 +1,26 @@
 <!doctype html>
 <html>
-  <head>
-    <title>起步</title>
-  </head>
-  <body>
-    <script src="bundle.js"></script>
-  </body>
+
+<head>
+  <title>起步</title>
+  <script>
+    /* 
+    如此之后，我们可以在代码中添加一些逻辑，根据条件去加载新的 polyfills.bundle.js 文件。你该如何决定，依赖于那些需要支持的技术以及浏览器。我们将做一些简单的试验，来确定是否需要引入这些 polyfills： */
+    var modernBrowser = (
+      'fetch' in window &&
+      'assign' in Object
+    );
+    if (!modernBrowser) {
+      var scriptElement = document.createElement('script');
+      scriptElement.async = false;
+      scriptElement.src = '/polyfills.bundle.js';
+      document.head.appendChild(scriptElement);
+    }
+  </script>
+</head>
+
+<body>
+  <script src="index.bundle.js"></script>
+</body>
+
 </html>

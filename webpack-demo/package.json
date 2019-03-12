@@ -9,7 +9,10 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "whatwg-fetch": "^3.0.0"
+  },
   "devDependencies": {
     "css-loader": "^2.1.1",
     "csv-loader": "^3.0.2",
