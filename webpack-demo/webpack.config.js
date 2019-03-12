@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack')
+
 module.exports = {
   mode: 'production',
   entry: './src/index.js',
@@ -15,6 +16,11 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        // 当模块运行在 CommonJS 环境下这将会变成一个问题，也就是说此时的 this 指向的是 module.exports。在这个例子中，你可以通过使用 imports-loader 覆写 this：
+        // test: require.resolve('index.js'),
+        // use: 'imports-loader?this=>window'
+      },
       {
         test: /\.css$/,
         use: [
