@@ -20,11 +20,11 @@ module.exports = {
   },
   entry: {
     index: './src/index.js',
-    another: './src/another-module.js'
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    chunkFilename: '[name].bundle.js', // 
   },
   module: {
     rules: [{

@@ -1,24 +1,13 @@
-import './style.css';
-import $ from './common/jQuery';
-import Icon from './common/1.png'
-import Data from './data.xml';
-import printMe from './print.js';
+function getComponent() {
+  return import( /* webpackChunkName: "lodash" */ 'lodash').then(_ => {
+    var element = document.createElement('div');
 
-function component() {
-  var element = document.createElement('div');
-  var btn = document.createElement('button');
-  element.innerText = 'hello webpack'
-  element.classList.add('hello');
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
+    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
 
-  element.appendChild(btn);
-  var image = new Image()
-  image.src = Icon
-  element.appendChild(image)
-  return element;
+    return element;
+
+  }).catch(error => 'An error occurred while loading the component');
 }
-
-document.body.appendChild(component());
-console.log($)
-console.log(Data);
+getComponent().then(component => {
+  document.body.appendChild(component);
+})
