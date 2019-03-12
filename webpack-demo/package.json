@@ -1,6 +1,5 @@
 {
   "name": "guide",
-  "sideEffects": false,
   "version": "1.0.0",
   "description": "learn webpack",
   "private": true,
