@@ -1,4 +1,5 @@
 import './style.css';
+import $ from './common/jQuery'
 function component() {
   var element = document.createElement('div');
   element.innerText = 'hello webpack'
@@ -7,3 +8,4 @@ function component() {
 }
 
 document.body.appendChild(component());
+console.log($)
