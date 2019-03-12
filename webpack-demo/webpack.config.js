@@ -2,26 +2,32 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
+
 module.exports = {
   mode: 'production',
   plugins: [
     new CleanWebpackPlugin(), // 清楚dist目录文件
     new HtmlWebpackPlugin({ // 管理新生产的HTML 和 配置依赖
-      title: '管理输出'
+      title: 'Code Splitting'
     }),
-    new ManifestPlugin() // 生成资源对应的JSON文件
+    new ManifestPlugin(), // 生成资源对应的JSON文件
   ],
+  // FIXME：webpack4 移除了 CommonsChunkPlugin，现在的写法：
+  optimization: {
+    splitChunks: {
+      name: 'common' // 指定公共的bundle的名称
+    }
+  },
   entry: {
-    app: './src/index.js',
-    print: './src/print.js'
+    index: './src/index.js',
+    another: './src/another-module.js'
   },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.css$/,
         use: [
           'style-loader',
@@ -41,7 +47,7 @@ module.exports = {
           'file-loader'
         ]
       },
-    /* 数据，如 JSON 文件，CSV、TSV 和 XML。类似于 NodeJS，JSON 支持实际上是内置的，也就是说 import Data from './data.json' 默认将正常运行。要导入 CSV、TSV 和 XML，你可以使用 csv-loader 和 xml-loader。 */
+      /* 数据，如 JSON 文件，CSV、TSV 和 XML。类似于 NodeJS，JSON 支持实际上是内置的，也就是说 import Data from './data.json' 默认将正常运行。要导入 CSV、TSV 和 XML，你可以使用 csv-loader 和 xml-loader。 */
       {
         test: /\.(csv|tsv)$/,
         use: [
