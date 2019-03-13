@@ -3,5 +3,7 @@
   "print.js": "print.bundle.js",
   "1.png": "9ba2f674de4f97328a58f685301a01f5.png",
   "iconfont.woff": "f1273fc31dc283ecc3147a568cf25cff.woff",
-  "index.html": "index.html"
+  "index.html": "index.html",
+  "precache-manifest.468cc8eed8c7091e19ce88c499d8c22c.js": "precache-manifest.468cc8eed8c7091e19ce88c499d8c22c.js",
+  "service-worker.js": "service-worker.js"
 }
