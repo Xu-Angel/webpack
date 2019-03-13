@@ -9,9 +9,12 @@
   },
   "author": "",
   "license": "ISC",
-  "Devdependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3"
-  },
-  "dependencies": {}
+    "webpack-cli": "^3.2.3",
+    "@types/lodash": "^4.14.123",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.3333"
+  }
 }
