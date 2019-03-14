@@ -8,6 +8,8 @@ https://juejin.im/post/5b82ac82f265da431d0e6d25
 
 https://segmentfault.com/a/1190000006178770
 
+https://www.webpackjs.com/loaders/
+
 ### Loaders
 
 - loader 支持链式传递。能够对资源使用流水线(pipeline)。一组链式的 loader 将按照相反的顺序执行。loader 链中的第一个 loader 返回值给下一个 loader。在最后一个 loader，返回 webpack 所预期的 JavaScript。

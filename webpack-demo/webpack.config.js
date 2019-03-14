@@ -3,15 +3,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 const webpack = require('webpack')
-
+// process.env.NODE_ENV = ''
+process.env.NODE_ENV = 'production'
+// const env = process.env.NODE_ENV
 // 对 webpack 配置进行一处修改。通常，module.exports 指向配置对象。要使用 env 变量，你必须将 module.exports 转换成一个函数：
-module.exports = env => {
+module.exports = {
 
   // Use env.<YOUR VARIABLE> here:
-  console.log('NODE_ENV: ', env.NODE_ENV) // 'local'
-  console.log('Production: ', env.production) // true
+  // console.log('Production: ', env.production) // true
 
-  return {
     mode: 'production',
     devtool: 'inline-source-map', // 编译后的代码映射回原始源代码
     devServer: { // 配置告知 webpack-dev-server，在 localhost:8080 下建立服务，将 dist 目录下的文件，作为可访问文件。
@@ -69,8 +69,12 @@ module.exports = env => {
           use: [
             'xml-loader'
           ]
+        },
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: "babel-loader"
         }
       ]
     }
-  }
 };
