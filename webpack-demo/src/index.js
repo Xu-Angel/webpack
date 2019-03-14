@@ -3,7 +3,7 @@ import $ from './common/jQuery';
 import Icon from './common/1.png'
 import Data from './data.xml';
 import printMe from './print.js';
-
+import './index.scss';
 function component() {
   var element = document.createElement('div');
   var btn = document.createElement('button');
