@@ -20,12 +20,21 @@ $baseFontSize:14px;
     font-weight: bold;
     display:flex;
     &-small{
+      background: url('./2.png');
         color: $offwhite;
         @include px2rem('font-size',14px);
     }
+    background: url('./common/1.png')
 }
 
 //autoprefixer
 ::placeholder{
     width:10px;
+}
+
+.class1 {
+  background: url('./2.png');
+}
+.class3 {
+  background: url('./common/art.png');
 }

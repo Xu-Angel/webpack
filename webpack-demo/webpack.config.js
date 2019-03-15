@@ -81,10 +81,22 @@ module.exports = {
       ]
     },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test:/\.(jpg|png|svg|gif)/,
         use: [
-          'file-loader'
-        ]
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'imgs/'   // 将所有图片放置在打包文件夹下的imgs 文件夹
+            }
+          },
+          {
+          loader:'url-loader',
+          options:{
+            limit:8129,//小于limit限制的图片将转为base64嵌入引用位置 8kb
+            fallback:'file-loader',//大于limit限制的将转交给指定的loader处理
+            outputPath:'imgs/'//options会直接传给fallback指定的loader
+          }
+        }]
       },
       /* file-loader 和 url-loader 可以接收并加载任何文件，然后将其输出到构建目录。这就是说，我们可以将它们用于任何类型的文件，包括字体 */
       {
