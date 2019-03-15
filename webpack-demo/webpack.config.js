@@ -3,8 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 const webpack = require('webpack')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");//将CSS代码提取为独立文件的插件
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");//CSS模块资源优化插件
+const MiniCssExtractPlugin = require("mini-css-extract-plugin"); //将CSS代码提取为独立文件的插件
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin"); //CSS模块资源优化插件
 // process.env.NODE_ENV = ''
 process.env.NODE_ENV = 'production'
 // const env = process.env.NODE_ENV
@@ -40,13 +40,37 @@ module.exports = {
     new ManifestPlugin(), // 生成资源对应的JSON文件
     new MiniCssExtractPlugin({
       filename: "[name].css"
-    })//为抽取出的独立的CSS文件设置配置参数
+    }) //为抽取出的独立的CSS文件设置配置参数
   ],
-  optimization:{
+  optimization: {
     //对生成的CSS文件进行代码压缩 mode='production'时生效
-    minimizer:[
-       new OptimizeCssAssetsPlugin()
-    ]
+    minimizer: [
+      new OptimizeCssAssetsPlugin()
+     ],
+    // splitChunks: {
+    //   chunks: 'async', //默认只作用于异步模块，为`all`时对所有模块生效,`initial`对同步模块有效
+    //   minSize: 30000, //合并前模块文件的体积
+    //   minChunks: 1, //最少被引用次数
+    //   maxAsyncRequests: 5,
+    //   maxInitialRequests: 3,
+    //   automaticNameDelimiter: '~', //自动命名连接符
+    //   cacheGroups: {
+    //     vendors: {
+    //       test: /[\\/]node_modules[\\/]/,
+    //       minChunks: 1, //敲黑板
+    //       priority: -10 //优先级更高
+    //     },
+    //     default: {
+    //       test: /[\\/]src[\\/]js[\\/]/,
+    //       minChunks: 2, //一般为非第三方公共模块
+    //       priority: -20,
+    //       reuseExistingChunk: true
+    //     }
+    //   }
+    //   // runtimeChunk: {
+    //   //   name: 'manifest'
+    //   // }
+    //  }
   },
   entry: {
     app: './src/index.js',
@@ -65,38 +89,37 @@ module.exports = {
           'css-loader'
         ]
       },
-    {
-      test: /\.scss$/,
-      exclude: /node_modules/, //排除node_modules文件夹
-      use: [{
-           loader: MiniCssExtractPlugin.loader//建议生产环境采用此方式解耦CSS文件与js文件
-        },{
-          loader: 'css-loader',//CSS加载器
-          options: {importLoaders: 2}//指定css-loader处理前最多可以经过的loader个数     
-        },{
-          loader: 'postcss-loader',//承载autoprefixer功能
-        },{
-          loader: 'sass-loader'//SCSS加载器，webpack默认使用node-sass进行编译
-        }
-      ]
-    },
       {
-        test:/\.(jpg|png|svg|gif)/,
-        use: [
-          {
+        test: /\.scss$/,
+        exclude: /node_modules/, //排除node_modules文件夹
+        use: [{
+          loader: MiniCssExtractPlugin.loader //建议生产环境采用此方式解耦CSS文件与js文件
+        }, {
+          loader: 'css-loader', //CSS加载器
+          options: { importLoaders: 2 } //指定css-loader处理前最多可以经过的loader个数     
+        }, {
+          loader: 'postcss-loader', //承载autoprefixer功能
+        }, {
+          loader: 'sass-loader' //SCSS加载器，webpack默认使用node-sass进行编译
+        }]
+      },
+      {
+        test: /\.(jpg|png|svg|gif)/,
+        use: [{
             loader: 'file-loader',
             options: {
-              outputPath: 'imgs/'   // 将所有图片放置在打包文件夹下的imgs 文件夹
+              outputPath: 'imgs/' // 将所有图片放置在打包文件夹下的imgs 文件夹
             }
           },
           {
-          loader:'url-loader',
-          options:{
-            limit:8129,//小于limit限制的图片将转为base64嵌入引用位置 8kb
-            fallback:'file-loader',//大于limit限制的将转交给指定的loader处理
-            outputPath:'imgs/'//options会直接传给fallback指定的loader
+            loader: 'url-loader',
+            options: {
+              limit: 8129, //小于limit限制的图片将转为base64嵌入引用位置 8kb
+              fallback: 'file-loader', //大于limit限制的将转交给指定的loader处理
+              outputPath: 'imgs/' //options会直接传给fallback指定的loader
+            }
           }
-        }]
+        ]
       },
       /* file-loader 和 url-loader 可以接收并加载任何文件，然后将其输出到构建目录。这就是说，我们可以将它们用于任何类型的文件，包括字体 */
       {
@@ -125,4 +148,4 @@ module.exports = {
       }
     ]
   }
-};
+}
