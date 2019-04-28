@@ -1,0 +1,27 @@
+{
+  "apps": {
+    "name": "serverBabel",
+    "script": "./dist/app.js",
+    "cwd": "./dist",
+    "args": "",
+    "interpreter": "",
+    "interpreter_args": "",
+    "watch": false,
+    "ignore_watch": [
+      "node_modules",
+      "./dist/logs",
+      "./dist/db"
+    ],
+    "exec_mode": "fork_mode",
+    "error_file": "./dist/logs/pm2/err.log",
+    "out_file": "./dist/logs/pm2/out.log",
+    "merge_logs": false,
+    "log_date_format": "YYYY-MM-DD HH:mm:ss",
+    "min_uptime": "600s",
+    "max_restarts": 30,
+    "autorestart": true,
+    "cron_restart": "30 1 7 * * *",
+    "restart_delay": 1,
+    "max_memory_restart": "350M"
+  }
+}

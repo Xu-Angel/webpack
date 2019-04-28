@@ -1,0 +1,12 @@
+[2019-04-25T15:12:26.846] [INFO] responseLog - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /admin/info
+request client ip:  null
+request query:  {}
+response time: 11
+response status: 200
+response body: 
+undefined
+*************** response log end ***************
+

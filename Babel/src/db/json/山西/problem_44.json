@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>squidGuard Error page</title>
+	</head>
+	<body>
+			<h3>This Web Site Is Blocked By IT Department: 403 Forbidden</h3>;
+	
+			<b>Reason:</b>  This Web Site Is Blocked By IT Department	
+		<hr size="1" noshade>
+			<b> Client address: </b> 59.41.198.154<br/>
+	
+			<b> Client name:    </b> 59.41.198.154<br/>
+	
+	
+			<b> Client group:   </b> default<br/>
+	
+			<b> Target group:   </b> blk_BL_dating<br/>
+	
+			<b> URL:            </b> http://search.jiayuan.com/v2/search_v2.php<br/>
+	
+		<hr size="1" noshade>
+	</body>
+</html>

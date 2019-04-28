@@ -1,0 +1,112 @@
+[2019-04-24T11:55:19.504] [INFO] responseLog - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /admin/info
+request client ip:  null
+request query:  {}
+response time: 5
+response status: 200
+response body: 
+undefined
+*************** response log end ***************
+
+[2019-04-24T11:55:20.061] [INFO] responseLog - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /img/16a4cfc1bd15.jpg
+request client ip:  null
+request query:  {}
+response time: 2
+response status: 200
+response body: 
+undefined
+*************** response log end ***************
+
+[2019-04-24T11:55:20.088] [INFO] responseLog - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /spider/getSipderConfig
+request client ip:  null
+request query:  {}
+response time: 1
+response status: 200
+response body: 
+undefined
+*************** response log end ***************
+
+[2019-04-24T11:55:20.114] [INFO] responseLog - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /girl/list
+request client ip:  null
+request params: 
+{}
+response time: 1
+response status: 200
+response body: 
+undefined
+*************** response log end ***************
+
+[2019-04-24T11:55:20.744] [INFO] responseLog - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /girl/list
+request client ip:  null
+request params: 
+{}
+response time: 1
+response status: 200
+response body: 
+undefined
+*************** response log end ***************
+
+[2019-04-24T11:55:20.749] [INFO] responseLog - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /spider/getSipderConfig
+request client ip:  null
+request query:  {}
+response time: 1
+response status: 200
+response body: 
+undefined
+*************** response log end ***************
+
+[2019-04-24T11:57:20.963] [INFO] responseLog - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /girl/getDetail
+request client ip:  null
+request params: 
+{}
+response time: 2
+response status: 200
+response body: 
+undefined
+*************** response log end ***************
+
+[2019-04-24T11:57:28.083] [INFO] responseLog - 
+*************** response log start ***************
+request method: GET
+request originalUrl:  /spider/getSipderConfig
+request client ip:  null
+request query:  {}
+response time: 2
+response status: 200
+response body: 
+undefined
+*************** response log end ***************
+
+[2019-04-24T11:57:28.114] [INFO] responseLog - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /girl/list
+request client ip:  null
+request params: 
+{}
+response time: 1
+response status: 200
+response body: 
+undefined
+*************** response log end ***************
+

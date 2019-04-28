@@ -1,0 +1,26 @@
+[2019-04-25T10:16:09.790] [INFO] responseLog - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /spider/setTop
+request client ip:  null
+request params: 
+{}
+response time: 4
+response status: 200
+response body: 
+undefined
+*************** response log end ***************
+
+[2019-04-25T10:16:57.477] [INFO] responseLog - 
+*************** response log start ***************
+request method: POST
+request originalUrl:  /spider/setTop
+request client ip:  null
+request params: 
+{}
+response time: 5
+response status: 200
+response body: 
+undefined
+*************** response log end ***************
+

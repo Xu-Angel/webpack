@@ -1,0 +1,88 @@
+2019-04-28 11:09:32: { Error: listen EADDRINUSE: address already in use :::8089
+2019-04-28 11:09:32:     at Server.setupListenHandle [as _listen2] (net.js:1270:14)
+2019-04-28 11:09:32:     at listenInCluster (net.js:1318:12)
+2019-04-28 11:09:32:     at Server.listen (net.js:1405:7)
+2019-04-28 11:09:32:     at Object.<anonymous> (C:\GitKraken\webpack\Babel\dist\app.js:151:8)
+2019-04-28 11:09:32:     at Module._compile (internal/modules/cjs/loader.js:701:30)
+2019-04-28 11:09:32:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+2019-04-28 11:09:32:     at Module.load (internal/modules/cjs/loader.js:600:32)
+2019-04-28 11:09:32:     at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+2019-04-28 11:09:32:     at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+2019-04-28 11:09:32:     at Object.<anonymous> (C:\Users\zhwaner\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:27:21)
+2019-04-28 11:09:32:     at Module._compile (internal/modules/cjs/loader.js:701:30)
+2019-04-28 11:09:32:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+2019-04-28 11:09:32:     at Module.load (internal/modules/cjs/loader.js:600:32)
+2019-04-28 11:09:32:     at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+2019-04-28 11:09:32:     at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+2019-04-28 11:09:32:     at Function.Module.runMain (internal/modules/cjs/loader.js:754:12)
+2019-04-28 11:09:32:   code: 'EADDRINUSE',
+2019-04-28 11:09:32:   errno: 'EADDRINUSE',
+2019-04-28 11:09:32:   syscall: 'listen',
+2019-04-28 11:09:32:   address: '::',
+2019-04-28 11:09:32:   port: 8089 }
+2019-04-28 11:09:40: { Error: listen EADDRINUSE: address already in use :::8089
+2019-04-28 11:09:40:     at Server.setupListenHandle [as _listen2] (net.js:1270:14)
+2019-04-28 11:09:40:     at listenInCluster (net.js:1318:12)
+2019-04-28 11:09:40:     at Server.listen (net.js:1405:7)
+2019-04-28 11:09:40:     at Object.<anonymous> (C:\GitKraken\webpack\Babel\dist\app.js:151:8)
+2019-04-28 11:09:40:     at Module._compile (internal/modules/cjs/loader.js:701:30)
+2019-04-28 11:09:40:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+2019-04-28 11:09:40:     at Module.load (internal/modules/cjs/loader.js:600:32)
+2019-04-28 11:09:40:     at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+2019-04-28 11:09:40:     at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+2019-04-28 11:09:40:     at Object.<anonymous> (C:\Users\zhwaner\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:27:21)
+2019-04-28 11:09:40:     at Module._compile (internal/modules/cjs/loader.js:701:30)
+2019-04-28 11:09:40:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+2019-04-28 11:09:40:     at Module.load (internal/modules/cjs/loader.js:600:32)
+2019-04-28 11:09:40:     at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+2019-04-28 11:09:40:     at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+2019-04-28 11:09:40:     at Function.Module.runMain (internal/modules/cjs/loader.js:754:12)
+2019-04-28 11:09:40:   code: 'EADDRINUSE',
+2019-04-28 11:09:40:   errno: 'EADDRINUSE',
+2019-04-28 11:09:40:   syscall: 'listen',
+2019-04-28 11:09:40:   address: '::',
+2019-04-28 11:09:40:   port: 8089 }
+2019-04-28 11:09:48: { Error: listen EADDRINUSE: address already in use :::8089
+2019-04-28 11:09:48:     at Server.setupListenHandle [as _listen2] (net.js:1270:14)
+2019-04-28 11:09:48:     at listenInCluster (net.js:1318:12)
+2019-04-28 11:09:48:     at Server.listen (net.js:1405:7)
+2019-04-28 11:09:48:     at Object.<anonymous> (C:\GitKraken\webpack\Babel\dist\app.js:151:8)
+2019-04-28 11:09:48:     at Module._compile (internal/modules/cjs/loader.js:701:30)
+2019-04-28 11:09:48:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+2019-04-28 11:09:48:     at Module.load (internal/modules/cjs/loader.js:600:32)
+2019-04-28 11:09:48:     at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+2019-04-28 11:09:48:     at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+2019-04-28 11:09:48:     at Object.<anonymous> (C:\Users\zhwaner\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:27:21)
+2019-04-28 11:09:48:     at Module._compile (internal/modules/cjs/loader.js:701:30)
+2019-04-28 11:09:48:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+2019-04-28 11:09:48:     at Module.load (internal/modules/cjs/loader.js:600:32)
+2019-04-28 11:09:48:     at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+2019-04-28 11:09:48:     at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+2019-04-28 11:09:48:     at Function.Module.runMain (internal/modules/cjs/loader.js:754:12)
+2019-04-28 11:09:48:   code: 'EADDRINUSE',
+2019-04-28 11:09:48:   errno: 'EADDRINUSE',
+2019-04-28 11:09:48:   syscall: 'listen',
+2019-04-28 11:09:48:   address: '::',
+2019-04-28 11:09:48:   port: 8089 }
+2019-04-28 11:09:56: { Error: listen EADDRINUSE: address already in use :::8089
+2019-04-28 11:09:56:     at Server.setupListenHandle [as _listen2] (net.js:1270:14)
+2019-04-28 11:09:56:     at listenInCluster (net.js:1318:12)
+2019-04-28 11:09:56:     at Server.listen (net.js:1405:7)
+2019-04-28 11:09:56:     at Object.<anonymous> (C:\GitKraken\webpack\Babel\dist\app.js:151:8)
+2019-04-28 11:09:56:     at Module._compile (internal/modules/cjs/loader.js:701:30)
+2019-04-28 11:09:56:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+2019-04-28 11:09:56:     at Module.load (internal/modules/cjs/loader.js:600:32)
+2019-04-28 11:09:56:     at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+2019-04-28 11:09:56:     at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+2019-04-28 11:09:56:     at Object.<anonymous> (C:\Users\zhwaner\AppData\Roaming\npm\node_modules\pm2\lib\ProcessContainerFork.js:27:21)
+2019-04-28 11:09:56:     at Module._compile (internal/modules/cjs/loader.js:701:30)
+2019-04-28 11:09:56:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:712:10)
+2019-04-28 11:09:56:     at Module.load (internal/modules/cjs/loader.js:600:32)
+2019-04-28 11:09:56:     at tryModuleLoad (internal/modules/cjs/loader.js:539:12)
+2019-04-28 11:09:56:     at Function.Module._load (internal/modules/cjs/loader.js:531:3)
+2019-04-28 11:09:56:     at Function.Module.runMain (internal/modules/cjs/loader.js:754:12)
+2019-04-28 11:09:56:   code: 'EADDRINUSE',
+2019-04-28 11:09:56:   errno: 'EADDRINUSE',
+2019-04-28 11:09:56:   syscall: 'listen',
+2019-04-28 11:09:56:   address: '::',
+2019-04-28 11:09:56:   port: 8089 }

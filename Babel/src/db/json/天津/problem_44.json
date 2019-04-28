@@ -1,0 +1,168 @@
+<!-- IE friendly error message walkround.        
+     if error message from server is less than   
+     512 bytes IE v5+ will use its own error     
+     message instead of the one returned by      
+     server.                                 --> 
+                                                 
+                                                 
+                                                 
+                                                 
+                                                 
+                                                 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="referrer" content="no-referrer">
+    <title>
+      Web Filter Violation
+    </title>
+    <style type="text/css">
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Arial, sans-serif;
+        font-size: 10pt;
+      }
+      h1, h2 {
+        height: 82px;
+        text-indent: -999em;
+        margin: 0;
+        padding: 0;
+        margin: 0;
+      }
+      div {
+        margin: 0;
+        padding: 0;
+      }
+      div.header {
+        height: 180px;
+      }
+      div.header {
+        background: url(http://url.fortinet.net:8008/XX/YY/ZZ/CI/CGBGDGLGHGCHPGFHOGEGPFEEDECD) 0 no-repeat;
+        width: 100%;
+        height: 150px;
+      }
+      div.header h2 {
+        float: right;
+      }
+      div.sidebar {
+        width: 55px;
+        height: 200px;
+        float: left;
+      }
+      div.main {
+        padding: 5px;
+        margin-left: 55px;
+      }
+      div.buttons {
+        margin-top: 30px;
+        text-align: right;
+      }
+      h3 {
+        font-size: 16pt;
+        margin-top: 15px;
+      }
+      .blocked      h3 {
+        color: #F01E46;
+      }
+      .authenticate h3 {
+        color: #36c;
+      }
+      h2.fgd_icon {
+        /*background: url(http://url.fortinet.net:8008/XX/YY/ZZ/CI/MGPGHGPGPFGHCDPFGGOGFGEH) 0 -166px repeat-x;*/
+        /*width: 90px;*/
+        height: 92px;
+        /*margin: 48px auto;*/
+      }
+      .blocked      h2.fgd_icon {
+        background-position: 0 -166px;
+      }
+      .authenticate h2.fgd_icon {
+        background-position: -89px -166px;
+      }
+      form {
+        width: 300px;
+        margin: 30px 0;
+      }
+      label {
+        display: block;
+        width: 300px;
+        margin: 5px 0;
+        line-height: 25px;
+      }
+      label input {
+        width: 200px;
+        border: 1px solid #7f9db9;
+        height: 20px;
+        float: right;
+      }
+      
+      #table_datos{
+        font-size: 12px;
+        border-top:1px solid silver; 
+        border-left:1px solid silver; 
+        border-right:1px solid silver; 
+        border-bottom:1px solid silver; 
+        padding:15px
+      }
+      #image_block {
+        width: 80px;
+        float: left;
+        margin-bottom: 15px;
+        margin-right: 15px
+      }
+    </style>
+  </head>
+  <body class="blocked">
+    <div class="header">
+    </div>
+    <div class="sidebar">
+      <h2 class="fgd_icon">
+        blocked
+      </h2>
+    </div>
+    <div class="main">
+      <h3 style="vertical-align: middle; line-height: 80px; height: 90px;">
+        <img id="image_block" src=http://url.fortinet.net:8008/XX/YY/ZZ/CI/DHIGJGFGMGEGNCCGMGFHFG /> <span style="height:80px;">Página Web Bloqueada</span>
+      </h3>
+      <div class="notice">
+        <p>
+          Usted está trantado de acceder a una página web que viola las políticas de uso del internet.
+        </p>
+        <p>
+          <table id="table_datos">
+            <tr>
+              <td style="font-weight:bold; width:130px">URL:</td><td>http://search.jiayuan.com/v2/search_v2.php</td>
+            </tr>
+            <tr>
+              <td style="font-weight:bold">Category:</td><td>Dating</td>
+            </tr>
+            <tr>
+              <td style="font-weight:bold">Client IP:</td><td>200.122.209.82</td>
+            </tr>
+            <tr>
+              <td style="font-weight:bold">Server IP:</td><td>59.151.18.17</td>
+            </tr>
+            <tr>
+              <td style="font-weight:bold">Group name:</td><td></td>
+            </tr>
+            <tr>
+              <td style="font-weight:bold">Category:</td><td>Dating</td>
+            </tr>
+          </table>
+        </p>
+        <p>
+          
+        </p>
+        <p>
+          Para reevaluar la calificación de esta página, 
+          <a href="http://url.fortinet.net/rate/submit.php?id=4F432D364B472F2730247B3F32512174&cat=0F&loc=http://search.jiayuan.com/v2/search_v2.php&ver=8">
+            por favor haga clic acá
+          </a>
+          .
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
